@@ -12,3 +12,7 @@ sed -i 's/OpenWrt/Redmi-AX6000/g' package/base-files/files/bin/config_generation
 
 # 4. 清理 banner 中的外链推广
 echo "Custom Pure Firmware for Redmi AX6000" > package/base-files/files/etc/banner
+
+# 添加 PassWall 2 及其依赖 packages 源码源
+echo 'src-git passwall2 https://github.com/Openwrt-Passwall/openwrt-passwall2.git;main' >> feeds.conf.default
+echo 'src-git passwall_packages https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git;main' >> feeds.conf.default
